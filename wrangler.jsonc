@@ -3,9 +3,25 @@
   "name": "fireeyar",
   "main": "src/index.js",
   "compatibility_date": "2026-09-08",
+
   "assets": {
     "directory": "./public",
     "binding": "ASSETS",
     "not_found_handling": "404-page"
-  }
+  },
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "fireeyar-db",
+      "database_id": "dcaeac25-796d-40c8-bfac-e76b7d69687d"
+    }
+  ],
+
+  "kv_namespaces": [
+    {
+      "binding": "SESSIONS",
+      "id": "2345d73eb06446a6a3c762eeef36b12a"
+    }
+  ]
 }
