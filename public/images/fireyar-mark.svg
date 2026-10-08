@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">FireEyar flame shield logo</title>
+  <defs>
+    <linearGradient id="shield" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffb52e"/><stop offset=".52" stop-color="#ff5a22"/><stop offset="1" stop-color="#ef233c"/></linearGradient>
+    <linearGradient id="flame" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0a6"/><stop offset=".55" stop-color="#ff9f1c"/><stop offset="1" stop-color="#ff4d27"/></linearGradient>
+  </defs>
+  <path d="M64 7 108 24v34c0 28-17 49-44 63C37 107 20 86 20 58V24L64 7Z" fill="#101a2b" stroke="url(#shield)" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M66 22c3 17-11 23-9 37 1 7 6 10 11 12-2-10 9-15 9-25 14 15 18 25 13 39-5 14-17 21-29 20-14-1-25-12-25-26 0-12 8-21 15-29 0 10 3 14 7 16-2-14 7-25 8-44Z" fill="url(#flame)"/>
+  <path d="M64 57c-2 9-10 14-10 23 0 7 5 12 11 12s12-5 12-12c0-8-7-14-13-23Z" fill="#fff4d0" opacity=".92"/>
+</svg>
