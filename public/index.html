@@ -1,1 +1,97 @@
-<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content=""><title>سیستم اعلام حریق و خدمات برق</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/css/style.css"></head><body><header class="top"><div class="wrap nav"><a class="brand" href="/"><b>F</b><span id="brand">[نام برند]</span></a><nav><a href="#services">خدمات</a><a href="#projects">پروژه‌ها</a><a href="#about">درباره من</a><a href="#contact">تماس</a></nav></div></header><main><section class="hero"><div class="fx"></div><div class="wrap heroIn"><small>FIRE ALARM • ELECTRICAL SERVICES</small><h1 id="heroTitle">طراحی و اجرای سیستم‌های اعلام حریق و خدمات برق ساختمان و صنعتی</h1><p id="heroSubtitle">ارائه خدمات تخصصی طراحی، نصب، راه‌اندازی، عیب‌یابی و نگهداری سیستم‌های اعلام حریق و اجرای خدمات برق ساختمان و تأسیسات الکتریکی.</p><div><a class="btn red" href="#contact">درخواست مشاوره</a><a class="btn ghost" href="#projects">پروژه‌ها</a></div></div></section><section id="services" class="section"><div class="wrap"><div class="head"><i>01</i><h2>خدمات تخصصی</h2><p>راهکارهای اجرایی برای پروژه‌های ایمنی و الکتریکی.</p></div><div id="servicesGrid" class="cards"></div></div></section><section id="projects" class="section dark"><div class="wrap"><div class="head"><i>02</i><h2>پروژه‌ها</h2><p>نمونه پروژه‌ها را از پنل مدیریت تکمیل کنید.</p></div><div id="projectsGrid" class="projects"></div></div></section><section id="about" class="section"><div class="wrap about"><div><small>ABOUT</small><h2 id="aboutTitle">ایمنی، با اجرای درست آغاز می‌شود.</h2><p id="aboutBody">[معرفی واقعی خود را از پنل مدیریت وارد کنید.]</p></div><div class="facts"><div><b id="city">اصفهان</b><span>محدوده خدمات</span></div><div><b>دقیق</b><span>رویکرد اجرایی</span></div><div><b>فنی</b><span>بررسی و عیب‌یابی</span></div></div></div></section><section id="contact" class="section dark"><div class="wrap contact"><div><small>CONTACT</small><h2>برای پروژه خود به مشاوره نیاز دارید؟</h2><p>اطلاعات تماس واقعی خود را از پنل مدیریت وارد کنید.</p><p><span id="phone">[شماره تماس]</span><br><span id="email">[ایمیل]</span></p></div><form id="form"><input name="name" placeholder="نام و نام خانوادگی" required><input name="phone" placeholder="شماره تماس" required><textarea name="message" rows="5" placeholder="توضیح کوتاه درباره پروژه"></textarea><button class="btn red">ارسال درخواست</button><span id="msg"></span></form></div></section></main><footer><div class="wrap"><span id="footerBrand">[نام برند]</span><span>© <span id="year"></span></span></div></footer><script src="/js/main.js"></script></body></html>
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="طراحی، اجرا، راه‌اندازی و نگهداری سیستم‌های اعلام حریق و خدمات برق ساختمان و صنعت.">
+  <meta name="theme-color" content="#0b1220">
+  <title>آتش‌آفرا | سیستم‌های اعلام حریق و خدمات برق</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap nav">
+      <a class="brand" href="/" aria-label="صفحه اصلی آتش‌آفرا">
+        <img src="/images/fireyar-mark.svg" alt="" width="54" height="54">
+        <span class="brandWords"><strong id="brand">آتش‌آفرا</strong><small>سیستم‌های ایمنی و برق</small></span>
+      </a>
+      <button class="menuToggle" id="menuToggle" type="button" aria-label="باز کردن منو" aria-expanded="false" aria-controls="siteNav"><span></span><span></span><span></span></button>
+      <nav id="siteNav" aria-label="ناوبری اصلی">
+        <a class="active" href="#home">خانه</a>
+        <a href="#about">درباره ما</a>
+        <a href="#services">خدمات</a>
+        <a href="#projects">پروژه‌ها</a>
+        <a href="#contact">تماس با ما</a>
+      </nav>
+      <a class="navCta" href="#contact"><span>درخواست مشاوره</span><b aria-hidden="true">←</b></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="heroGlow" aria-hidden="true"></div>
+      <div class="wrap heroIn">
+        <div class="heroCopy">
+          <div class="eyebrow"><span class="pulseDot"></span> FIRE ALARM <i></i> ELECTRICAL SERVICES</div>
+          <h1 id="heroTitle">ایمنی، سرمایهٔ زندگی شماست.</h1>
+          <p id="heroSubtitle">طراحی، اجرا و نگهداری سیستم‌های اعلام حریق و ارائه خدمات برق ساختمان و صنعت، با توجه به نیاز هر پروژه.</p>
+          <div class="heroActions">
+            <a class="btn red" href="#services">مشاهده خدمات <span aria-hidden="true">←</span></a>
+            <a class="btn ghost" href="#projects">آشنایی با پروژه‌ها</a>
+          </div>
+          <div class="heroTrust"><span class="trustIcon">✓</span><span>توجه به جزئیات فنی، ایمنی و کیفیت اجرا</span></div>
+        </div>
+        <div class="heroVisual" aria-label="تصویر گرافیکی تجهیزات ایمنی و اعلام حریق" role="img">
+          <img src="/images/hero-fire-safety.svg" alt="تجهیزات گرافیکی اعلام حریق و سیستم ایمنی" fetchpriority="high">
+          <div class="visualTag"><span class="tagIcon">✦</span><span><b>FireEyar</b><small>راهکارهای ایمنی و برق</small></span></div>
+        </div>
+      </div>
+      <div class="heroBottomLine" aria-hidden="true"></div>
+    </section>
+
+    <section id="services" class="section servicesSection">
+      <div class="wrap">
+        <div class="sectionHead"><div><span class="sectionKicker">01 / SERVICES</span><h2>خدمات تخصصی</h2></div><p>راهکارهای فنی برای افزایش ایمنی و عملکرد مطمئن تجهیزات.</p></div>
+        <div id="servicesGrid" class="cards"></div>
+      </div>
+    </section>
+
+    <section id="projects" class="section projectsSection">
+      <div class="wrap">
+        <div class="sectionHead lightHead"><div><span class="sectionKicker">02 / PROJECTS</span><h2>پروژه‌ها و تجربه‌های اجرایی</h2></div><p>نمونه‌هایی از پروژه‌ها و فعالیت‌های قابل ارائه.</p></div>
+        <div id="projectsGrid" class="projects"></div>
+        <div class="projectFoot"><span class="miniFlame">✦</span> دقت در اجرا؛ توجه به جزئیات؛ اولویت با ایمنی</div>
+      </div>
+    </section>
+
+    <section id="about" class="section aboutSection">
+      <div class="wrap about">
+        <div class="aboutCopy"><span class="sectionKicker">03 / ABOUT US</span><h2 id="aboutTitle">ایمنی، با اجرای درست آغاز می‌شود.</h2><p id="aboutBody">آتش‌آفرا با تمرکز بر خدمات فنی اعلام حریق و برق، به دنبال ارائه راهکارهایی متناسب با نیاز هر پروژه است.</p><a class="textLink" href="#contact">برای گفت‌وگو درباره پروژه <span aria-hidden="true">←</span></a></div>
+        <div class="aboutPanel"><div class="panelMark"><img src="/images/fireyar-mark.svg" alt="" width="62" height="62"><span>FIRE<span>EYAR</span></span></div><div class="panelDivider"></div><div class="aboutPoint"><b>01</b><span><strong>نگاه فنی</strong><small>بررسی نیاز و شرایط هر پروژه</small></span></div><div class="aboutPoint"><b>02</b><span><strong>توجه به ایمنی</strong><small>تمرکز بر راهکارهای مناسب و دقیق</small></span></div><div class="aboutPoint"><b>03</b><span><strong>پاسخ‌گویی</strong><small>ارتباط روشن در مسیر اجرای کار</small></span></div></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contactSection">
+      <div class="wrap contact">
+        <div class="contactCopy"><span class="sectionKicker">04 / CONTACT</span><h2>برای پروژهٔ خود به مشاوره نیاز دارید؟</h2><p>برای بررسی نیاز پروژه و دریافت اطلاعات بیشتر، از راه‌های ارتباطی زیر استفاده کنید یا فرم درخواست را تکمیل کنید.</p>
+          <div class="contactDetails"><div class="contactDetail"><span class="detailIcon">☎</span><div><small>شماره تماس</small><strong id="phone"></strong></div></div><div class="contactDetail"><span class="detailIcon">✉</span><div><small>ایمیل</small><strong id="email"></strong></div></div><div class="contactDetail"><span class="detailIcon">⌖</span><div><small>محدوده خدمات</small><strong id="city"></strong></div></div></div>
+        </div>
+        <form id="form" class="contactForm">
+          <div class="formHeading"><strong>ارسال درخواست مشاوره</strong><small>اطلاعات پروژه را وارد کنید تا درخواست شما ثبت شود.</small></div>
+          <label>نام و نام خانوادگی<input name="name" autocomplete="name" placeholder="نام شما" required></label>
+          <label>شماره تماس<input name="phone" autocomplete="tel" inputmode="tel" placeholder="شماره تماس برای ارتباط" required></label>
+          <label>توضیحات پروژه<textarea name="message" rows="4" placeholder="به چه خدماتی نیاز دارید؟"></textarea></label>
+          <button class="btn red submitBtn" type="submit">ثبت درخواست <span aria-hidden="true">←</span></button>
+          <span id="msg" class="formMessage" role="status" aria-live="polite"></span>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="wrap footerInner"><a class="footerBrand" href="/" aria-label="بازگشت به صفحه اصلی"><img src="/images/fireyar-mark.svg" alt="" width="34" height="34"><span id="footerBrand">آتش‌آفرا</span></a><span class="copyright">© <span id="year"></span> <span id="footerBrandText">FireEyar</span> — تمامی حقوق محفوظ است.</span><a class="backTop" href="#home">بازگشت به بالا ↑</a></div></footer>
+  <script src="/js/main.js"></script>
+</body>
+</html>
