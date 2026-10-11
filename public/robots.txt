@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+
+Sitemap: https://fireyar.abolfazl1389ghanbarii.workers.dev/sitemap.xml
