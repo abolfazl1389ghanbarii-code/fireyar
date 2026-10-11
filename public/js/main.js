@@ -6,7 +6,7 @@ async function boot(){
     const response=await fetch('/api/public',{headers:{accept:'application/json'}});
     if(!response.ok)throw new Error('Public data unavailable');
     const d=await response.json(),s=d.settings||{};
-    const brand=s.brand||'آتش‌آفرا';
+    const brand=(s.brand||'آتش افرا').replace(/آتش[‌‍-]?آفرا/g,'آتش افرا');
     document.title=s.seo_title||`${brand} | سیستم‌های اعلام حریق و خدمات برق`;
     const description=document.querySelector('meta[name="description"]');
     if(description&&s.seo_description)description.content=s.seo_description;
@@ -15,7 +15,7 @@ async function boot(){
     $('#heroTitle').textContent=s.hero_title||'ایمنی، سرمایهٔ زندگی شماست.';
     $('#heroSubtitle').textContent=s.hero_subtitle||'طراحی، اجرا و نگهداری سیستم‌های اعلام حریق و ارائه خدمات برق ساختمان و صنعت، با توجه به نیاز هر پروژه.';
     $('#aboutTitle').textContent=s.about_title||'ایمنی، با اجرای درست آغاز می‌شود.';
-    $('#aboutBody').textContent=s.about_body||'آتش‌آفرا با تمرکز بر خدمات فنی اعلام حریق و برق، به دنبال ارائه راهکارهایی متناسب با نیاز هر پروژه است.';
+    $('#aboutBody').textContent=s.about_body||'آتش افرا با تمرکز بر خدمات فنی اعلام حریق و برق، به دنبال ارائه راهکارهایی متناسب با نیاز هر پروژه است.';
     const cityEl=$('#city'),phoneEl=$('#phone'),emailEl=$('#email');
     cityEl.textContent=s.city||'';phoneEl.textContent=s.phone||'';emailEl.textContent=s.email||'';
     cityEl.closest('.contactDetail').hidden=!s.city;
