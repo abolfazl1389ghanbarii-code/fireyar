@@ -16,14 +16,16 @@ async function boot(){
     $('#heroSubtitle').textContent=s.hero_subtitle||'طراحی، اجرا و نگهداری سیستم‌های اعلام حریق و ارائه خدمات برق ساختمان و صنعت، با توجه به نیاز هر پروژه.';
     $('#aboutTitle').textContent=s.about_title||'ایمنی، با اجرای درست آغاز می‌شود.';
     $('#aboutBody').textContent=s.about_body||'آتش افرا با تمرکز بر خدمات فنی اعلام حریق و برق، به دنبال ارائه راهکارهایی متناسب با نیاز هر پروژه است.';
-    const cityEl=$('#city'),phoneEl=$('#phone'),emailEl=$('#email');
-    cityEl.textContent=s.city||'';phoneEl.textContent=s.phone||'';emailEl.textContent=s.email||'';
+    const cityEl=$('#city'),phoneEl=$('#phone');
+    cityEl.textContent=s.city||'';phoneEl.textContent=s.phone||'';
     cityEl.closest('.contactDetail').hidden=!s.city;
     phoneEl.closest('.contactDetail').hidden=!s.phone;
-    emailEl.closest('.contactDetail').hidden=!s.email;
-    $('.contactDetails').hidden=!(s.city||s.phone||s.email);
+    $('.contactDetails').hidden=!(s.city||s.phone);
+    const socials=[{key:'instagram_url',label:'اینستاگرام',cls:'instagram',icon:'◎'},{key:'telegram_url',label:'تلگرام',cls:'telegram',icon:'➤'},{key:'bale_url',label:'بله',cls:'bale',icon:'✓'}];
+    $('#socialLinks').innerHTML=socials.filter(x=>/^https?:\/\//i.test(s[x.key]||'')).map(x=>'<a class="socialLink '+x.cls+'" href="'+E(s[x.key])+'" target="_blank" rel="noopener noreferrer" aria-label="'+x.label+'" title="'+x.label+'"><span class="socialLogo" aria-hidden="true">'+x.icon+'</span><span>'+x.label+'</span></a>').join('');
     $('#servicesGrid').innerHTML=(d.services||[]).map((x,i)=>`<article class="card"><div class="n">${String(i+1).padStart(2,'0')}</div><h3>${E(x.title)}</h3><p>${E(x.body)}</p></article>`).join('')||'<p class="emptyState">اطلاعات خدمات در حال تکمیل است.</p>';
     $('#projectsGrid').innerHTML=(d.projects||[]).map(x=>`<article class="project">${x.image?`<img src="${E(x.image)}" alt="${E(x.title)}" loading="lazy" onerror="this.style.display='none'">`:''}<div class="pb"><h3>${E(x.title)}</h3><p>${E(x.meta||'پروژه')}</p>${x.body?`<p>${E(x.body)}</p>`:''}</div></article>`).join('')||'<p class="emptyState lightEmpty">نمونه‌پروژه‌ها در حال تکمیل هستند.</p>';
+    $('#educationGrid').innerHTML=(d.education||[]).map(x=>'<a class="project educationCard" href="/education.html?id='+x.id+'">'+(x.image?'<img src="'+E(x.image)+'" alt="'+E(x.title)+'" loading="lazy">':'')+'<div class="pb"><h3>'+E(x.title)+'</h3><p>'+E(x.meta||'آموزش')+'</p><span class="educationRead">مطالعه آموزش ←</span></div></a>').join('')||'<p class="emptyState">مطالب آموزشی به‌زودی اضافه می‌شوند.</p>';
   }catch(e){console.warn('FireEyar public content could not be loaded:',e);}
 }
 $('#year').textContent=new Date().getFullYear();
