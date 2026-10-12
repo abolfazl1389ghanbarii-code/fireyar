@@ -3,8 +3,8 @@ const hash=async s=>{const b=await crypto.subtle.digest("SHA-256",new TextEncode
 const sid=r=>{const m=(r.headers.get("Cookie")||"").match(/(?:^|; )fa_session=([^;]+)/);return m&&decodeURIComponent(m[1])};
 const auth=async(r,e)=>{const s=sid(r);return !!(s&&e.SESSIONS&&await e.SESSIONS.get("admin:"+s))};
 const settings=async e=>Object.fromEntries((await e.DB.prepare("SELECT key,value FROM settings").all()).results.map(x=>[x.key,x.value]));
-const itemImage=x=>x.image&&x.image.startsWith("data:image/")?`${x.type==="education"?"/api/education-cover/":"/api/project-image/"}${x.id}`:(x.image||"");
-async function data(e){const q=async t=>(await e.DB.prepare("SELECT id,title,body,meta,image FROM items WHERE type=? AND published=1 ORDER BY sort_order,id").bind(t).all()).results||[];return{settings:await settings(e),services:await q("service"),projects:(await q("project")).map(x=>({...x,image:itemImage(x)})),education:(await q("education")).map(x=>{let blocks=[];try{blocks=JSON.parse(x.body||"[]")}catch{}return{...x,image:itemImage(x),body:JSON.stringify(blocks.map(b=>b&&b.type==="image"?{type:"image",content:""}:b))}}),timeline:await q("timeline"),reviews:await q("review")}}
+const itemImage=(x,kind)=>x.image&&x.image.startsWith("data:image/")?`${kind==="education"?"/api/education-cover/":"/api/project-image/"}${x.id}`:(x.image||"");
+async function data(e){const q=async t=>(await e.DB.prepare("SELECT id,title,body,meta,image FROM items WHERE type=? AND published=1 ORDER BY sort_order,id").bind(t).all()).results||[];return{settings:await settings(e),services:await q("service"),projects:(await q("project")).map(x=>({...x,image:itemImage(x,"project")})),education:(await q("education")).map(x=>{let blocks=[];try{blocks=JSON.parse(x.body||"[]")}catch{}return{...x,image:itemImage(x,"education"),body:JSON.stringify(blocks.map(b=>b&&b.type==="image"?{type:"image",content:""}:b))}}),timeline:await q("timeline"),reviews:await q("review")}}
 const cookie=(v,age)=>`fa_session=${encodeURIComponent(v)}; Path=/; HttpOnly; SameSite=Strict; Max-Age=${age}`;
 export default{async fetch(r,e){const u=new URL(r.url);
 try{
