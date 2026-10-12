@@ -21,7 +21,7 @@ async function boot(){
     cityEl.closest('.contactDetail').hidden=!s.city;
     phoneEl.closest('.contactDetail').hidden=!s.phone;
     $('.contactDetails').hidden=!(s.city||s.phone);
-    const socials=[{key:'instagram_url',label:'اینستاگرام',cls:'instagram',icon:'/images/instagram.svg'},{key:'telegram_url',label:'تلگرام',cls:'telegram',icon:'/images/telegram.svg'},{key:'bale_url',label:'بله',cls:'bale',icon:'/images/bale.svg'}];
+    const socials=[{key:'instagram_url',label:'اینستاگرام',cls:'instagram',icon:'/images/instagram.svg'},{key:'telegram_url',label:'تلگرام',cls:'telegram',icon:'/images/telegram.svg?v=3'},{key:'bale_url',label:'بله',cls:'bale',icon:'/images/bale.svg'}];
     $('#socialLinks').innerHTML=socials.filter(x=>/^https?:\/\//i.test(s[x.key]||'')).map(x=>'<a class="socialLink '+x.cls+'" href="'+E(s[x.key])+'" target="_blank" rel="noopener noreferrer" aria-label="'+x.label+'" title="'+x.label+'"><img class="socialLogo" src="'+x.icon+'" alt="" width="32" height="32"><span>'+x.label+'</span></a>').join('');
     $('#servicesGrid').innerHTML=(d.services||[]).map((x,i)=>`<article class="card"><div class="n">${String(i+1).padStart(2,'0')}</div><h3>${E(x.title)}</h3><p>${E(x.body)}</p></article>`).join('')||'<p class="emptyState">اطلاعات خدمات در حال تکمیل است.</p>';
     $('#projectsGrid').innerHTML=(d.projects||[]).map(x=>`<article class="project">${x.image?`<img src="${E(x.image)}" alt="${E(x.title)}" loading="lazy" onerror="this.style.display='none'">`:''}<div class="pb"><h3>${E(x.title)}</h3><p>${E(x.meta||'پروژه')}</p>${x.body?`<p>${E(x.body)}</p>`:''}</div></article>`).join('')||'<p class="emptyState lightEmpty">نمونه‌پروژه‌ها در حال تکمیل هستند.</p>';
