@@ -3,6 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script>
+    // Remove any legacy offline worker/cache for this origin when the current homepage loads online.
+    (() => {
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations()
+          .then(registrations => Promise.all(registrations.map(registration => registration.unregister())))
+          .catch(() => {});
+      }
+      if ('caches' in window) {
+        caches.keys()
+          .then(keys => Promise.all(keys.map(key => caches.delete(key))))
+          .catch(() => {});
+      }
+    })();
+  </script>
   <meta name="description" content="طراحی، اجرا، راه‌اندازی و نگهداری سیستم‌های اعلام حریق و خدمات برق ساختمان و صنعت.">
   <meta name="theme-color" content="#0b1220">
   <link rel="canonical" href="https://fireyar.abolfazl1389ghanbarii.workers.dev/">
